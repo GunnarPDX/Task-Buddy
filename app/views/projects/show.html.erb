@@ -1,4 +1,30 @@
-<p id="notice"><%= notice %></p>
+
+<div class="card">
+  <div class="card-header">
+    <h2 class="card-title d-flex justify-content-between">
+      <span><%= @project.name %></span>
+      <div>
+        <%= link_to 'Edit', edit_project_path(@project), class: 'btn btn-warning' %>
+        <%= link_to 'Delete', @project, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure?'} %>
+      </div>
+    </h2>
+  </div>
+
+  <div class="card-body">
+    <h5>New task</h5>
+    <%= render 'tasks/form' %>
+
+    <hr/>
+
+
+
+  </div>
+</div>
+
+
+
+
+
 
 <p>
   <strong>Name:</strong>
@@ -20,10 +46,7 @@
 
 <hr/>
 
-<h1>New task</h1>
-<%= render 'tasks/form' %>
 
-<hr/>
 
 <h1>Listing tasks</h1>
 

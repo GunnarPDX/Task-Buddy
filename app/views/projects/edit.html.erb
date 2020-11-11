@@ -2,7 +2,13 @@
 
   <div class="card-header">
     <h2 class="card-title d-flex justify-content-between mb-0">
-      <span>New Project</span>
+      <div>
+        <span>Edit Project</span>
+      </div>
+
+      <div>
+        <%= link_to 'Delete', @project, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure?'} %>
+      </div>
     </h2>
   </div>
 

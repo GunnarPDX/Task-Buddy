@@ -4,7 +4,6 @@
       <span><%= @project.name %></span>
       <div>
         <%= link_to 'Edit', edit_project_path(@project), class: 'btn btn-warning' %>
-        <%= link_to 'Delete', @project, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure?'} %>
       </div>
     </h2>
 
@@ -38,7 +37,6 @@
 
               <div>
                 <%= link_to 'Update', edit_project_task_path(task.project, task), class: 'btn btn-warning btn-sm' %>
-                <%= link_to 'Delete', [task.project, task], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
               </div>
             </div>
 

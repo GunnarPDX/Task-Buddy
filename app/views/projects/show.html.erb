@@ -1,14 +1,24 @@
 <div class="card">
   <div class="card-header">
-    <h2 class="card-title d-flex justify-content-between">
-      <span><%= @project.name %></span>
+    <div class="card-title d-flex justify-content-between">
+      <div class="d-flex">
+        <h2><span><%= @project.name %></span></h2>
+        <div class="ml-3">
+          <span class="badge <%= @project.status_color %> dark-text-link mr-3">
+            <%= @project.percent_complete %>%
+          </span>
+            <span class="dark-text-link mr-3">
+            <%= @project.tasks_completed %>
+          </span>
+        </div>
+      </div>
       <div>
         <%= link_to 'Edit', edit_project_path(@project), class: 'btn btn-warning' %>
       </div>
-    </h2>
+    </div>
 
     <p>
-      <strong>Description:</strong>
+      <strong>Description</strong>
       <br/>
       <%= @project.description %>
     </p>

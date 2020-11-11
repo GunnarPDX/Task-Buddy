@@ -29,5 +29,21 @@ class Project < ApplicationRecord
     "(" + count.to_s + "/" + complete_tasks.to_s + " tasks)"
   end
 
+  def status_color
+    percent = self.percent_complete
+
+    if percent < 10
+      'badge-red'
+    elsif percent < 30
+      'badge-orange'
+    elsif percent < 60
+      'badge-yellow'
+    elsif percent < 90
+      'badge-light-green'
+    else
+      'badge-green'
+    end
+  end
+
 
 end

@@ -17,6 +17,7 @@
 // Colors
 $blue: #6aa3d4;
 $green: #73ee86;
+$light-green: #c0ff92;
 $yellow: #ffec7e;
 $orange: #ffc063;
 $violet: #727DF5;
@@ -44,6 +45,10 @@ body {
   background: #eeeeee;
 }
 
+.dark-text-link {
+  color: $body-color;
+}
+
 .badge-not-started {
   background-color: $orange;
 }
@@ -54,4 +59,30 @@ body {
 
 .badge-complete {
   background-color: $green;
+}
+
+.badge-red {
+  background-color: $red;
+}
+
+.badge-orange {
+  background-color: $orange;
+}
+
+.badge-yellow {
+  background-color: $yellow;
+}
+
+.badge-light-green {
+  background-color: $light-green;
+}
+
+.badge-green {
+  background-color: $green;
+}
+
+.hover-background{
+  &:hover {
+    background-color: $light-grey;
+  }
 }

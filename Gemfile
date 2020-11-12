@@ -31,6 +31,8 @@ gem 'devise'
 gem 'nested_scaffold'
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'acts_as_list'
+gem 'jquery-ui-rails'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

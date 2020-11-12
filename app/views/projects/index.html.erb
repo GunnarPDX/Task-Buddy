@@ -7,10 +7,10 @@
     </h2>
   </div>
 
-  <div class="card-body pb-1">
+  <div id="projects" class="card-body pb-1" data-url="<%= sort_projects_path %>">
 
     <% @projects.each do |project| %>
-      <%= link_to project, class: 'text-decoration-none' do %>
+      <%= link_to project, class: 'text-decoration-none', id: dom_id(project) do %>
         <div class="card hover-background p-0 mb-3">
           <div class="card-body d-flex justify-content-between pt-1 pb-1 ">
             <div>

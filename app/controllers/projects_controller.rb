@@ -5,7 +5,15 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = current_user.projects
+    @projects = current_user.projects.order(:position)
+  end
+
+  def sort
+    params[:project].each_with_index do |id, index|
+      current_user.projects.where(id: id).update_all(position: index + 1)
+    end
+
+    head :ok
   end
 
   # GET /projects/1

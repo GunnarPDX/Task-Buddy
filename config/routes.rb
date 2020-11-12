@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   resources :projects do
+    collection do
+      patch :sort
+    end
+
+
     resources :tasks
   end
   devise_for :users

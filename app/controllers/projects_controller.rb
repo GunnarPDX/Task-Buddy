@@ -19,6 +19,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @tasks = @project.tasks.order(:position)
     @task = @project.tasks.build
   end
 

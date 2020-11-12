@@ -28,40 +28,43 @@
     <%= render 'tasks/form' %>
   </div>
 
-  <div class="card-body pb-1" id="tasks" data-url="<%= sort_project_tasks_path %>>
+  <div class="card-body pb-1">
 
     <h4>Tasks</h4>
 
-    <% @project.tasks.each do |task| %>
-      <% if task.persisted? %>
+    <div id="tasks" data-url="<%= sort_project_tasks_path(@project.id) %>">
+      <% @tasks.each do |task| %>
+        <% if task.persisted? %>
 
-        <div class="card mb-3">
-          <div class="card-body">
+          <div class="card mb-3" id="<%= dom_id(task)%>">
+            <div class="card-body">
 
-            <div class="d-flex justify-content-between">
-              <div>
+              <div class="d-flex justify-content-between">
+                <div>
                 <span class="badge badge-<%= task.status %> %> mb-2">
                   <%= task.status %>
                 </span>
+                </div>
+
+                <div>
+                  <%= link_to 'Update', edit_project_task_path(task.project, task), class: 'btn btn-warning btn-sm' %>
+                </div>
               </div>
 
-              <div>
-                <%= link_to 'Update', edit_project_task_path(task.project, task), class: 'btn btn-warning btn-sm', id: dom_id(task) %>
-              </div>
+              <h5 class="card-title mb-2">
+                <%= task.name %>
+              </h5>
+
+
+              <p><%= task.description %></p>
             </div>
-
-            <h5 class="card-title mb-2">
-              <%= task.name %>
-            </h5>
-
-
-            <p><%= task.description %></p>
           </div>
-        </div>
 
 
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
+
   </div>
 </div>
 

@@ -5,12 +5,13 @@ class TasksController < ApplicationController
 
   # GET projects/1/tasks
   def index
-    @tasks = @project.tasks
+    @tasks = @project.tasks.order(:position)
   end
 
   def sort
-    params[:tasks].each_with_index do |id, index|
-      current_user.projects.tasks.where(id: id).update_all(position: index + 1)
+    tasks = @project.tasks
+    params[:task].each_with_index do |id, index|
+      tasks.where(id: id).update_all(position: index + 1)
     end
 
     head :ok

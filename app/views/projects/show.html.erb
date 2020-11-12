@@ -28,7 +28,7 @@
     <%= render 'tasks/form' %>
   </div>
 
-  <div class="card-body pb-1">
+  <div class="card-body pb-1" id="tasks">
 
     <h4>Tasks</h4>
 
@@ -46,7 +46,7 @@
               </div>
 
               <div>
-                <%= link_to 'Update', edit_project_task_path(task.project, task), class: 'btn btn-warning btn-sm' %>
+                <%= link_to 'Update', edit_project_task_path(task.project, task), class: 'btn btn-warning btn-sm', id: dom_id(task) %>
               </div>
             </div>
 

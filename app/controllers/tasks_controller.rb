@@ -8,6 +8,14 @@ class TasksController < ApplicationController
     @tasks = @project.tasks
   end
 
+  def sort
+    params[:tasks].each_with_index do |id, index|
+      current_user.projects.tasks.where(id: id).update_all(position: index + 1)
+    end
+
+    head :ok
+  end
+
   # GET projects/1/tasks/1
   def show
   end
